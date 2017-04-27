@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.jxufe.yooai</groupId>
+    <artifactId>yooaispace</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>yooai-common</module>
+        <module>yooai-common-config</module>
+        <module>yooai-common-core</module>
+        <module>yooai-common-web</module>
+        <module>yooai-spring-parent</module>
+        <module>yooai-service-front</module>
+        <module>yooai-service-bhind</module>
+        <module>yooai-service-provider</module>
+        <module>yooai-service-web</module>
+        <module>yooai-data-api</module>
+        <module>yooai-nosql-redis</module>
+        <module>yooai-nosql-mongo</module>
+        <module>yooai-spring-socket</module>
+    </modules>
+
+
+</project>

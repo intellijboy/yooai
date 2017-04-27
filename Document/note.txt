@@ -1,0 +1,5 @@
+思路：
+0.搭建整体Maven模块架构，并且同步Git版本控制管理工具
+1.搭建mybatis+spring环境（测试）
+2.搭建日志、spring、springMVC等模块
+3.搭建Dubbo环境（测试）
