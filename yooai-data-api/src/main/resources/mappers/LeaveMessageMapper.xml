@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jxufe.dao.LeaveMessageMapper">
+  <resultMap id="BaseResultMap" type="com.jxufe.entity.LeaveMessage">
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="leave_id" jdbcType="INTEGER" property="leaveId" />
+    <result column="leave_content" jdbcType="VARCHAR" property="leaveContent" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    user_id, leave_id, leave_content, create_time, modify_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from leavemsg
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from leavemsg
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jxufe.entity.LeaveMessage">
+    insert into leavemsg (user_id, leave_id, leave_content, 
+      create_time, modify_time)
+    values (#{userId,jdbcType=INTEGER}, #{leaveId,jdbcType=INTEGER}, #{leaveContent,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jxufe.entity.LeaveMessage">
+    insert into leavemsg
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="leaveId != null">
+        leave_id,
+      </if>
+      <if test="leaveContent != null">
+        leave_content,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="leaveId != null">
+        #{leaveId,jdbcType=INTEGER},
+      </if>
+      <if test="leaveContent != null">
+        #{leaveContent,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jxufe.entity.LeaveMessage">
+    update leavemsg
+    <set>
+      <if test="leaveId != null">
+        leave_id = #{leaveId,jdbcType=INTEGER},
+      </if>
+      <if test="leaveContent != null">
+        leave_content = #{leaveContent,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jxufe.entity.LeaveMessage">
+    update leavemsg
+    set leave_id = #{leaveId,jdbcType=INTEGER},
+      leave_content = #{leaveContent,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+</mapper>
