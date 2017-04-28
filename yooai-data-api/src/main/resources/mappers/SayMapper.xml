@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jxufe.dao.SayMapper">
+  <resultMap id="BaseResultMap" type="com.jxufe.entity.Say">
+    <id column="say_id" jdbcType="INTEGER" property="sayId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="say_content" jdbcType="VARCHAR" property="sayContent" />
+    <result column="say_views" jdbcType="INTEGER" property="sayViews" />
+    <result column="say_lovers" jdbcType="INTEGER" property="sayLovers" />
+    <result column="say_state" jdbcType="INTEGER" property="sayState" />
+    <result column="is_top" jdbcType="INTEGER" property="isTop" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    say_id, user_id, say_content, say_views, say_lovers, say_state, is_top
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from say
+    where say_id = #{sayId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from say
+    where say_id = #{sayId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jxufe.entity.Say">
+    insert into say (say_id, user_id, say_content, 
+      say_views, say_lovers, say_state, 
+      is_top)
+    values (#{sayId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{sayContent,jdbcType=VARCHAR}, 
+      #{sayViews,jdbcType=INTEGER}, #{sayLovers,jdbcType=INTEGER}, #{sayState,jdbcType=INTEGER}, 
+      #{isTop,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jxufe.entity.Say">
+    insert into say
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="sayId != null">
+        say_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="sayContent != null">
+        say_content,
+      </if>
+      <if test="sayViews != null">
+        say_views,
+      </if>
+      <if test="sayLovers != null">
+        say_lovers,
+      </if>
+      <if test="sayState != null">
+        say_state,
+      </if>
+      <if test="isTop != null">
+        is_top,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="sayId != null">
+        #{sayId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="sayContent != null">
+        #{sayContent,jdbcType=VARCHAR},
+      </if>
+      <if test="sayViews != null">
+        #{sayViews,jdbcType=INTEGER},
+      </if>
+      <if test="sayLovers != null">
+        #{sayLovers,jdbcType=INTEGER},
+      </if>
+      <if test="sayState != null">
+        #{sayState,jdbcType=INTEGER},
+      </if>
+      <if test="isTop != null">
+        #{isTop,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jxufe.entity.Say">
+    update say
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="sayContent != null">
+        say_content = #{sayContent,jdbcType=VARCHAR},
+      </if>
+      <if test="sayViews != null">
+        say_views = #{sayViews,jdbcType=INTEGER},
+      </if>
+      <if test="sayLovers != null">
+        say_lovers = #{sayLovers,jdbcType=INTEGER},
+      </if>
+      <if test="sayState != null">
+        say_state = #{sayState,jdbcType=INTEGER},
+      </if>
+      <if test="isTop != null">
+        is_top = #{isTop,jdbcType=INTEGER},
+      </if>
+    </set>
+    where say_id = #{sayId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jxufe.entity.Say">
+    update say
+    set user_id = #{userId,jdbcType=INTEGER},
+      say_content = #{sayContent,jdbcType=VARCHAR},
+      say_views = #{sayViews,jdbcType=INTEGER},
+      say_lovers = #{sayLovers,jdbcType=INTEGER},
+      say_state = #{sayState,jdbcType=INTEGER},
+      is_top = #{isTop,jdbcType=INTEGER}
+    where say_id = #{sayId,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jxufe.dao.LogMapper">
+  <resultMap id="BaseResultMap" type="com.jxufe.entity.Log">
+    <id column="log_id" jdbcType="INTEGER" property="logId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="log_titile" jdbcType="VARCHAR" property="logTitile" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.jxufe.entity.Log">
+    <result column="log_conent" jdbcType="LONGVARCHAR" property="logConent" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    log_id, user_id, log_titile, create_time, modify_time
+  </sql>
+  <sql id="Blob_Column_List">
+    log_conent
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from log
+    where log_id = #{logId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from log
+    where log_id = #{logId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jxufe.entity.Log">
+    insert into log (log_id, user_id, log_titile, 
+      create_time, modify_time, log_conent
+      )
+    values (#{logId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{logTitile,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, #{logConent,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jxufe.entity.Log">
+    insert into log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        log_id,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="logTitile != null">
+        log_titile,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+      <if test="logConent != null">
+        log_conent,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="logId != null">
+        #{logId,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="logTitile != null">
+        #{logTitile,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logConent != null">
+        #{logConent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jxufe.entity.Log">
+    update log
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="logTitile != null">
+        log_titile = #{logTitile,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logConent != null">
+        log_conent = #{logConent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.jxufe.entity.Log">
+    update log
+    set user_id = #{userId,jdbcType=INTEGER},
+      log_titile = #{logTitile,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      log_conent = #{logConent,jdbcType=LONGVARCHAR}
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jxufe.entity.Log">
+    update log
+    set user_id = #{userId,jdbcType=INTEGER},
+      log_titile = #{logTitile,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where log_id = #{logId,jdbcType=INTEGER}
+  </update>
+</mapper>
