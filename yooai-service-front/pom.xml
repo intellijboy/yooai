@@ -11,5 +11,20 @@
 
     <artifactId>yooai-service-front</artifactId>
 
+    <dependencies>
+        <!--依赖yooai-spirng-parent和yooai-data-api模块-->
+        <dependency>
+            <groupId>com.jxufe.yooai</groupId>
+            <artifactId>yooai-spring-parent</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jxufe.yooai</groupId>
+            <artifactId>yooai-data-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
 
 </project>

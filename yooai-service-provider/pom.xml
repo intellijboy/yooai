@@ -35,6 +35,24 @@
     </build>
 
     <dependencies>
+        <!--依赖yooai-service-front 和 yooai-service-bhind模块-->
+        <dependency>
+            <groupId>com.jxufe.yooai</groupId>
+            <artifactId>yooai-service-front</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jxufe.yooai</groupId>
+            <artifactId>yooai-service-bhind</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.jxufe.yooai</groupId>
+            <artifactId>yooai-common-config</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
 
     </dependencies>
 
