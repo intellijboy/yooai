@@ -3,21 +3,13 @@ package com.jxufe.entity;
 import java.util.Date;
 
 public class AdminRole {
-    private Integer adminId;
-
     private Integer roleId;
+
+    private Integer adminId;
 
     private Date createTime;
 
     private Date modifyTime;
-
-    public Integer getAdminId() {
-        return adminId;
-    }
-
-    public void setAdminId(Integer adminId) {
-        this.adminId = adminId;
-    }
 
     public Integer getRoleId() {
         return roleId;
@@ -25,6 +17,14 @@ public class AdminRole {
 
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
+    }
+
+    public Integer getAdminId() {
+        return adminId;
+    }
+
+    public void setAdminId(Integer adminId) {
+        this.adminId = adminId;
     }
 
     public Date getCreateTime() {

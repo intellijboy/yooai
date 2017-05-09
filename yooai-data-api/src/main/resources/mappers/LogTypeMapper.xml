@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jxufe.dao.LogTypeMapper">
+  <resultMap id="BaseResultMap" type="com.jxufe.entity.LogType">
+    <id column="ltype_id" jdbcType="INTEGER" property="ltypeId" />
+    <result column="ltype_name" jdbcType="VARCHAR" property="ltypeName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ltype_id, ltype_name, create_time, modify_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from log_type
+    where ltype_id = #{ltypeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from log_type
+    where ltype_id = #{ltypeId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jxufe.entity.LogType">
+    insert into log_type (ltype_id, ltype_name, create_time, 
+      modify_time)
+    values (#{ltypeId,jdbcType=INTEGER}, #{ltypeName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jxufe.entity.LogType">
+    insert into log_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ltypeId != null">
+        ltype_id,
+      </if>
+      <if test="ltypeName != null">
+        ltype_name,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ltypeId != null">
+        #{ltypeId,jdbcType=INTEGER},
+      </if>
+      <if test="ltypeName != null">
+        #{ltypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jxufe.entity.LogType">
+    update log_type
+    <set>
+      <if test="ltypeName != null">
+        ltype_name = #{ltypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ltype_id = #{ltypeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jxufe.entity.LogType">
+    update log_type
+    set ltype_name = #{ltypeName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where ltype_id = #{ltypeId,jdbcType=INTEGER}
+  </update>
+</mapper>

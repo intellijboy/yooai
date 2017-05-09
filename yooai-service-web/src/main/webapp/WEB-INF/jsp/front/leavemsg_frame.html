@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- bootstrap -->
+		<link href="plugins/bootstrap/css/bootstrap.min.css" rel='stylesheet' type='text/css' media="all" />
+		<!-- //bootstrap -->
+		<link href="assets/front/css/index/dashboard.css" rel="stylesheet">
+		<!-- Custom Theme files -->
+		<link href="assets/front/css/index/style.css" rel='stylesheet' type='text/css' media="all" />
+		<script src="plugins/jquery/jquery-1.12.3.min.js"></script>
+
+		<!--导入富文本编辑器引用的js-->
+		<script type="text/javascript" charset="utf-8" src="plugins/ueditor/ueditor.config.js"></script>
+		<script type="text/javascript" charset="utf-8" src="plugins/ueditor/ueditor.all.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="plugins/ueditor/lang/zh-cn/zh-cn.js"></script>
+
+		<script>
+			var ue = UE.getEditor('editor', {
+				toolbars: [
+					['emotion']
+				],
+				autoHeightEnabled: true,
+				autoFloatEnabled: true
+			});
+		</script>
+	</head>
+
+	<body>
+
+
+		<!-- footer -->
+		<div class="footer">
+			<div class="footer-grids">
+				<div class="footer-top">
+					<div class="footer-top-nav">
+						<ul>
+							<li>
+								<a href="about">关于</a>
+							</li>
+							<li>
+								<a href="press">拓展</a>
+							</li>
+							<li>
+								<a href="copyright">版权</a>
+							</li>
+							<li>
+								<a href="creators">创建人</a>
+							</li>
+							<li>
+								<a href="#">友情链接</a>
+							</li>
+							<li>
+								<a href="developers">开发者</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer-bottom-nav">
+						<ul>
+							<li>
+								<a href="terms">Terms</a>
+							</li>
+							<li>
+								<a href="privacy">Privacy</a>
+							</li>
+							<li>
+								<a href="#small-dialog4" class="play-icon popup-with-zoom-anim">Send feedback</a>
+							</li>
+							<li>
+								<a href="privacy">Policy & Safety </a>
+							</li>
+							<li>
+								<a href="try">Try something new!</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //footer -->
+	</body>
+
+</html>

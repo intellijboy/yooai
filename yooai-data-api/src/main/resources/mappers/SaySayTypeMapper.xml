@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jxufe.dao.SaySayTypeMapper">
+  <resultMap id="BaseResultMap" type="com.jxufe.entity.SaySayType">
+    <id column="stype_id" jdbcType="INTEGER" property="stypeId" />
+    <id column="say_id" jdbcType="INTEGER" property="sayId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="mofify_time" jdbcType="TIMESTAMP" property="mofifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    stype_id, say_id, create_time, mofify_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from say_say_type
+    where stype_id = #{stypeId,jdbcType=INTEGER}
+      and say_id = #{sayId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from say_say_type
+    where stype_id = #{stypeId,jdbcType=INTEGER}
+      and say_id = #{sayId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jxufe.entity.SaySayType">
+    insert into say_say_type (stype_id, say_id, create_time, 
+      mofify_time)
+    values (#{stypeId,jdbcType=INTEGER}, #{sayId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{mofifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jxufe.entity.SaySayType">
+    insert into say_say_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="stypeId != null">
+        stype_id,
+      </if>
+      <if test="sayId != null">
+        say_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="mofifyTime != null">
+        mofify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="stypeId != null">
+        #{stypeId,jdbcType=INTEGER},
+      </if>
+      <if test="sayId != null">
+        #{sayId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mofifyTime != null">
+        #{mofifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jxufe.entity.SaySayType">
+    update say_say_type
+    <set>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="mofifyTime != null">
+        mofify_time = #{mofifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where stype_id = #{stypeId,jdbcType=INTEGER}
+      and say_id = #{sayId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jxufe.entity.SaySayType">
+    update say_say_type
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+      mofify_time = #{mofifyTime,jdbcType=TIMESTAMP}
+    where stype_id = #{stypeId,jdbcType=INTEGER}
+      and say_id = #{sayId,jdbcType=INTEGER}
+  </update>
+</mapper>

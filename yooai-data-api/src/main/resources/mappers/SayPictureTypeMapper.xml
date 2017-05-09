@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jxufe.dao.SayPictureTypeMapper">
+  <resultMap id="BaseResultMap" type="com.jxufe.entity.SayPictureType">
+    <id column="ptype_id" jdbcType="INTEGER" property="ptypeId" />
+    <result column="ptype_name" jdbcType="VARCHAR" property="ptypeName" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ptype_id, ptype_name, create_time, modify_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from say_picture_type
+    where ptype_id = #{ptypeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from say_picture_type
+    where ptype_id = #{ptypeId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jxufe.entity.SayPictureType">
+    insert into say_picture_type (ptype_id, ptype_name, create_time, 
+      modify_time)
+    values (#{ptypeId,jdbcType=INTEGER}, #{ptypeName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jxufe.entity.SayPictureType">
+    insert into say_picture_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ptypeId != null">
+        ptype_id,
+      </if>
+      <if test="ptypeName != null">
+        ptype_name,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ptypeId != null">
+        #{ptypeId,jdbcType=INTEGER},
+      </if>
+      <if test="ptypeName != null">
+        #{ptypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jxufe.entity.SayPictureType">
+    update say_picture_type
+    <set>
+      <if test="ptypeName != null">
+        ptype_name = #{ptypeName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ptype_id = #{ptypeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jxufe.entity.SayPictureType">
+    update say_picture_type
+    set ptype_name = #{ptypeName,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where ptype_id = #{ptypeId,jdbcType=INTEGER}
+  </update>
+</mapper>

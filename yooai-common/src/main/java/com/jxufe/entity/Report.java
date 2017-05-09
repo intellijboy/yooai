@@ -5,11 +5,19 @@ import java.util.Date;
 public class Report {
     private Integer userId;
 
+    private Integer objectUserId;
+
+    private Integer objectDetailId;
+
     private String reportContent;
 
     private Date createTime;
 
     private Date modifyTime;
+
+    private Integer objectUsreId;
+
+    private Integer objectUserDetail;
 
     public Integer getUserId() {
         return userId;
@@ -17,6 +25,22 @@ public class Report {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Integer getObjectUserId() {
+        return objectUserId;
+    }
+
+    public void setObjectUserId(Integer objectUserId) {
+        this.objectUserId = objectUserId;
+    }
+
+    public Integer getObjectDetailId() {
+        return objectDetailId;
+    }
+
+    public void setObjectDetailId(Integer objectDetailId) {
+        this.objectDetailId = objectDetailId;
     }
 
     public String getReportContent() {
@@ -41,5 +65,21 @@ public class Report {
 
     public void setModifyTime(Date modifyTime) {
         this.modifyTime = modifyTime;
+    }
+
+    public Integer getObjectUsreId() {
+        return objectUsreId;
+    }
+
+    public void setObjectUsreId(Integer objectUsreId) {
+        this.objectUsreId = objectUsreId;
+    }
+
+    public Integer getObjectUserDetail() {
+        return objectUserDetail;
+    }
+
+    public void setObjectUserDetail(Integer objectUserDetail) {
+        this.objectUserDetail = objectUserDetail;
     }
 }

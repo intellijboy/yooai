@@ -3,21 +3,13 @@ package com.jxufe.entity;
 import java.util.Date;
 
 public class RoleFunction {
-    private Integer functionId;
-
     private Integer roleId;
+
+    private Integer functionId;
 
     private Date createTime;
 
     private Date modifyTime;
-
-    public Integer getFunctionId() {
-        return functionId;
-    }
-
-    public void setFunctionId(Integer functionId) {
-        this.functionId = functionId;
-    }
 
     public Integer getRoleId() {
         return roleId;
@@ -25,6 +17,14 @@ public class RoleFunction {
 
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
+    }
+
+    public Integer getFunctionId() {
+        return functionId;
+    }
+
+    public void setFunctionId(Integer functionId) {
+        this.functionId = functionId;
     }
 
     public Date getCreateTime() {

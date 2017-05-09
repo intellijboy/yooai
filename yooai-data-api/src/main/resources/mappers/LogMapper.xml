@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.jxufe.entity.Log">
     <id column="log_id" jdbcType="INTEGER" property="logId" />
     <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="ltype_id" jdbcType="INTEGER" property="ltypeId" />
     <result column="log_titile" jdbcType="VARCHAR" property="logTitile" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
@@ -12,7 +13,7 @@
     <result column="log_conent" jdbcType="LONGVARCHAR" property="logConent" />
   </resultMap>
   <sql id="Base_Column_List">
-    log_id, user_id, log_titile, create_time, modify_time
+    log_id, user_id, ltype_id, log_titile, create_time, modify_time
   </sql>
   <sql id="Blob_Column_List">
     log_conent
@@ -30,12 +31,12 @@
     where log_id = #{logId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.jxufe.entity.Log">
-    insert into log (log_id, user_id, log_titile, 
-      create_time, modify_time, log_conent
-      )
-    values (#{logId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{logTitile,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, #{logConent,jdbcType=LONGVARCHAR}
-      )
+    insert into log (log_id, user_id, ltype_id, 
+      log_titile, create_time, modify_time, 
+      log_conent)
+    values (#{logId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{ltypeId,jdbcType=INTEGER}, 
+      #{logTitile,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{logConent,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.jxufe.entity.Log">
     insert into log
@@ -45,6 +46,9 @@
       </if>
       <if test="userId != null">
         user_id,
+      </if>
+      <if test="ltypeId != null">
+        ltype_id,
       </if>
       <if test="logTitile != null">
         log_titile,
@@ -66,6 +70,9 @@
       <if test="userId != null">
         #{userId,jdbcType=INTEGER},
       </if>
+      <if test="ltypeId != null">
+        #{ltypeId,jdbcType=INTEGER},
+      </if>
       <if test="logTitile != null">
         #{logTitile,jdbcType=VARCHAR},
       </if>
@@ -86,6 +93,9 @@
       <if test="userId != null">
         user_id = #{userId,jdbcType=INTEGER},
       </if>
+      <if test="ltypeId != null">
+        ltype_id = #{ltypeId,jdbcType=INTEGER},
+      </if>
       <if test="logTitile != null">
         log_titile = #{logTitile,jdbcType=VARCHAR},
       </if>
@@ -104,6 +114,7 @@
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.jxufe.entity.Log">
     update log
     set user_id = #{userId,jdbcType=INTEGER},
+      ltype_id = #{ltypeId,jdbcType=INTEGER},
       log_titile = #{logTitile,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       modify_time = #{modifyTime,jdbcType=TIMESTAMP},
@@ -113,6 +124,7 @@
   <update id="updateByPrimaryKey" parameterType="com.jxufe.entity.Log">
     update log
     set user_id = #{userId,jdbcType=INTEGER},
+      ltype_id = #{ltypeId,jdbcType=INTEGER},
       log_titile = #{logTitile,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       modify_time = #{modifyTime,jdbcType=TIMESTAMP}

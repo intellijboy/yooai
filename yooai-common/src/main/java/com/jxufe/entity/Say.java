@@ -1,5 +1,7 @@
 package com.jxufe.entity;
 
+import java.util.Date;
+
 public class Say {
     private Integer sayId;
 
@@ -14,6 +16,16 @@ public class Say {
     private Integer sayState;
 
     private Integer isTop;
+
+    private Integer reportedCount;
+
+    private String sayVideo;
+
+    private String sayMusic;
+
+    private Date createTime;
+
+    private Date modifyTime;
 
     public Integer getSayId() {
         return sayId;
@@ -69,5 +81,45 @@ public class Say {
 
     public void setIsTop(Integer isTop) {
         this.isTop = isTop;
+    }
+
+    public Integer getReportedCount() {
+        return reportedCount;
+    }
+
+    public void setReportedCount(Integer reportedCount) {
+        this.reportedCount = reportedCount;
+    }
+
+    public String getSayVideo() {
+        return sayVideo;
+    }
+
+    public void setSayVideo(String sayVideo) {
+        this.sayVideo = sayVideo;
+    }
+
+    public String getSayMusic() {
+        return sayMusic;
+    }
+
+    public void setSayMusic(String sayMusic) {
+        this.sayMusic = sayMusic;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getModifyTime() {
+        return modifyTime;
+    }
+
+    public void setModifyTime(Date modifyTime) {
+        this.modifyTime = modifyTime;
     }
 }

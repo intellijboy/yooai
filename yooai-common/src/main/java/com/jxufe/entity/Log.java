@@ -7,6 +7,8 @@ public class Log {
 
     private Integer userId;
 
+    private Integer ltypeId;
+
     private String logTitile;
 
     private Date createTime;
@@ -29,6 +31,14 @@ public class Log {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Integer getLtypeId() {
+        return ltypeId;
+    }
+
+    public void setLtypeId(Integer ltypeId) {
+        this.ltypeId = ltypeId;
     }
 
     public String getLogTitile() {

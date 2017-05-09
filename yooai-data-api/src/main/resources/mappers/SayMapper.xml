@@ -9,9 +9,15 @@
     <result column="say_lovers" jdbcType="INTEGER" property="sayLovers" />
     <result column="say_state" jdbcType="INTEGER" property="sayState" />
     <result column="is_top" jdbcType="INTEGER" property="isTop" />
+    <result column="reported_count" jdbcType="INTEGER" property="reportedCount" />
+    <result column="say_video" jdbcType="VARCHAR" property="sayVideo" />
+    <result column="say_music" jdbcType="VARCHAR" property="sayMusic" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    say_id, user_id, say_content, say_views, say_lovers, say_state, is_top
+    say_id, user_id, say_content, say_views, say_lovers, say_state, is_top, reported_count, 
+    say_video, say_music, create_time, modify_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -26,10 +32,14 @@
   <insert id="insert" parameterType="com.jxufe.entity.Say">
     insert into say (say_id, user_id, say_content, 
       say_views, say_lovers, say_state, 
-      is_top)
+      is_top, reported_count, say_video, 
+      say_music, create_time, modify_time
+      )
     values (#{sayId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{sayContent,jdbcType=VARCHAR}, 
       #{sayViews,jdbcType=INTEGER}, #{sayLovers,jdbcType=INTEGER}, #{sayState,jdbcType=INTEGER}, 
-      #{isTop,jdbcType=INTEGER})
+      #{isTop,jdbcType=INTEGER}, #{reportedCount,jdbcType=INTEGER}, #{sayVideo,jdbcType=VARCHAR}, 
+      #{sayMusic,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.jxufe.entity.Say">
     insert into say
@@ -55,6 +65,21 @@
       <if test="isTop != null">
         is_top,
       </if>
+      <if test="reportedCount != null">
+        reported_count,
+      </if>
+      <if test="sayVideo != null">
+        say_video,
+      </if>
+      <if test="sayMusic != null">
+        say_music,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="sayId != null">
@@ -77,6 +102,21 @@
       </if>
       <if test="isTop != null">
         #{isTop,jdbcType=INTEGER},
+      </if>
+      <if test="reportedCount != null">
+        #{reportedCount,jdbcType=INTEGER},
+      </if>
+      <if test="sayVideo != null">
+        #{sayVideo,jdbcType=VARCHAR},
+      </if>
+      <if test="sayMusic != null">
+        #{sayMusic,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -101,6 +141,21 @@
       <if test="isTop != null">
         is_top = #{isTop,jdbcType=INTEGER},
       </if>
+      <if test="reportedCount != null">
+        reported_count = #{reportedCount,jdbcType=INTEGER},
+      </if>
+      <if test="sayVideo != null">
+        say_video = #{sayVideo,jdbcType=VARCHAR},
+      </if>
+      <if test="sayMusic != null">
+        say_music = #{sayMusic,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where say_id = #{sayId,jdbcType=INTEGER}
   </update>
@@ -111,7 +166,12 @@
       say_views = #{sayViews,jdbcType=INTEGER},
       say_lovers = #{sayLovers,jdbcType=INTEGER},
       say_state = #{sayState,jdbcType=INTEGER},
-      is_top = #{isTop,jdbcType=INTEGER}
+      is_top = #{isTop,jdbcType=INTEGER},
+      reported_count = #{reportedCount,jdbcType=INTEGER},
+      say_video = #{sayVideo,jdbcType=VARCHAR},
+      say_music = #{sayMusic,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
     where say_id = #{sayId,jdbcType=INTEGER}
   </update>
 </mapper>

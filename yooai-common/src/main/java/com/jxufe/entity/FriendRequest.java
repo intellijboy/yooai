@@ -7,7 +7,7 @@ public class FriendRequest {
 
     private Integer strangerId;
 
-    private String requestStatus;
+    private Integer requestStatus;
 
     private Date createTime;
 
@@ -29,11 +29,11 @@ public class FriendRequest {
         this.strangerId = strangerId;
     }
 
-    public String getRequestStatus() {
+    public Integer getRequestStatus() {
         return requestStatus;
     }
 
-    public void setRequestStatus(String requestStatus) {
+    public void setRequestStatus(Integer requestStatus) {
         this.requestStatus = requestStatus;
     }
 

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jxufe.dao.FunctionMapper">
+  <resultMap id="BaseResultMap" type="com.jxufe.entity.Function">
+    <id column="function_id" jdbcType="INTEGER" property="functionId" />
+    <result column="function_name" jdbcType="CHAR" property="functionName" />
+    <result column="function_url" jdbcType="VARCHAR" property="functionUrl" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    function_id, function_name, function_url, create_time, modify_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from function
+    where function_id = #{functionId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from function
+    where function_id = #{functionId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.jxufe.entity.Function">
+    insert into function (function_id, function_name, function_url, 
+      create_time, modify_time)
+    values (#{functionId,jdbcType=INTEGER}, #{functionName,jdbcType=CHAR}, #{functionUrl,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jxufe.entity.Function">
+    insert into function
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="functionId != null">
+        function_id,
+      </if>
+      <if test="functionName != null">
+        function_name,
+      </if>
+      <if test="functionUrl != null">
+        function_url,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="functionId != null">
+        #{functionId,jdbcType=INTEGER},
+      </if>
+      <if test="functionName != null">
+        #{functionName,jdbcType=CHAR},
+      </if>
+      <if test="functionUrl != null">
+        #{functionUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jxufe.entity.Function">
+    update function
+    <set>
+      <if test="functionName != null">
+        function_name = #{functionName,jdbcType=CHAR},
+      </if>
+      <if test="functionUrl != null">
+        function_url = #{functionUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where function_id = #{functionId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jxufe.entity.Function">
+    update function
+    set function_name = #{functionName,jdbcType=CHAR},
+      function_url = #{functionUrl,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where function_id = #{functionId,jdbcType=INTEGER}
+  </update>
+</mapper>
