@@ -13,17 +13,19 @@
     <artifactId>yooai-service-web</artifactId>
 
     <dependencies>
-      <!--依赖服务模块yooai-service-front和yooai-service-bhind和yooai-spring-parent-->
+        <!--依赖服务模块yooai-service-front和yooai-service-bhind和yooai-spring-parent-->
         <dependency>
             <groupId>com.jxufe.yooai</groupId>
             <artifactId>yooai-service-front</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.jxufe.yooai</groupId>
-            <artifactId>yooai-service-bhind</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
+
+        <!--不用去配置依赖后台的服务，前台就只能调用前台提供的服务-->
+           <dependency>
+               <groupId>com.jxufe.yooai</groupId>
+               <artifactId>yooai-service-bhind</artifactId>
+               <version>1.0-SNAPSHOT</version>
+           </dependency>
         <dependency>
             <groupId>com.jxufe.yooai</groupId>
             <artifactId>yooai-spring-parent</artifactId>
@@ -45,6 +47,11 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jxufe.yooai</groupId>
+            <artifactId>yooai-service-bhind</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

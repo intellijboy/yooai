@@ -1,8 +1,9 @@
 package com.jxufe.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Function {
+public class Function implements Serializable {
     private Integer functionId;
 
     private String functionName;

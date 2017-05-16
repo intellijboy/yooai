@@ -1,8 +1,9 @@
 package com.jxufe.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class LogComment {
+public class LogComment implements Serializable {
     private Integer logId;
 
     private String logCommentContent;

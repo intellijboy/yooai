@@ -1,11 +1,13 @@
-.personalfont{
-	font-size: 14px;
-    line-height: 24px;
-    color: #e99393;
-    font-family: "PingFang SC", 微软雅黑, "Microsoft YaHei", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif;
-}
-
-.formDiv{
-	margin-top: 15px;
+.emailBox{
+    height: 300px;
+    background: white;
+    margin-top: 100px;
+    font-size: 20px;
+    font-family: "Microsoft Yahei";
+    font-weight: 100;
+    color: #e70826;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    padding-top: 60px;
 }
 

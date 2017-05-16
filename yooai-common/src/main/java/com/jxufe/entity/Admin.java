@@ -1,15 +1,16 @@
 package com.jxufe.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Admin {
+public class Admin implements Serializable {
     private Integer adminId;
 
     private String adminName;
 
     private String adminPassword;
 
-    private Integer adminType;
+    private String adminHeadUrl;
 
     private Date createTime;
 
@@ -41,12 +42,12 @@ public class Admin {
         this.adminPassword = adminPassword;
     }
 
-    public Integer getAdminType() {
-        return adminType;
+    public String getAdminHeadUrl() {
+        return adminHeadUrl;
     }
 
-    public void setAdminType(Integer adminType) {
-        this.adminType = adminType;
+    public void setAdminHeadUrl(String adminHeadUrl) {
+        this.adminHeadUrl = adminHeadUrl;
     }
 
     public Date getCreateTime() {

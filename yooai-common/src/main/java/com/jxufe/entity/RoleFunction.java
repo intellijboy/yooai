@@ -1,8 +1,9 @@
 package com.jxufe.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class RoleFunction {
+public class RoleFunction implements Serializable {
     private Integer roleId;
 
     private Integer functionId;

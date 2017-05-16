@@ -1,8 +1,9 @@
 package com.jxufe.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Picture {
+public class Picture implements Serializable {
     private Integer pictureId;
 
     private Integer sayId;

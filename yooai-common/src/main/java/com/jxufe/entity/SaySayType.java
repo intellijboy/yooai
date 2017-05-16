@@ -1,8 +1,9 @@
 package com.jxufe.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class SaySayType {
+public class SaySayType implements Serializable {
     private Integer stypeId;
 
     private Integer sayId;

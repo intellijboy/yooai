@@ -1,11 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
-%>
 <html>
 <head>
-    <base href="<%=basePath%>">
     <title>个人相关设置</title>
     <meta charset="utf-8"/>
     <jsp:include page="share/share_css.jsp"></jsp:include>

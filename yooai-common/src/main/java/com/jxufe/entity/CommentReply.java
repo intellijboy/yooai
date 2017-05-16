@@ -1,8 +1,9 @@
 package com.jxufe.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class CommentReply {
+public class CommentReply implements Serializable {
     private Integer replayId;
 
     private Integer commentId;

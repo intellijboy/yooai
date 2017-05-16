@@ -20,14 +20,14 @@
                 <div class="input username" id="username">
                     <label for="userName">用户名</label>
                     <span></span>
-                    <input type="text" id="userName" />
+                    <input type="text" name="userName" />
                 </div>
                 <div class="input psw" id="psw">
                     <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
                     <span></span>
                     <input type="password" id="password" />
                 </div>
-                <div class="input validate" id="validate">
+                <div class="input validate" name="validate">
                     <label for="valiDate">验证码</label>
                     <input type="text" id="valiDate" />
                     <div class="value">X3D5</div>
@@ -56,7 +56,7 @@
 	$('select').select();
 	
 	$('.loginButton').click(function(e) {
-        document.location.href = "main.html";
+        document.location.href = "WEB-INF/jsp/main.html";
     });
 </script>
 </html>

@@ -59,6 +59,7 @@
         <module>yooai-nosql-redis</module>
         <module>yooai-nosql-mongo</module>
         <module>yooai-spring-socket</module>
+        <module>yooai-service-admin</module>
     </modules>
 
     <dependencies>

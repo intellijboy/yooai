@@ -1,11 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
-%>
 <html>
 <head>
-    <base href="<%=basePath%>">
     <title>与我相关</title>
     <meta charset="utf-8"/>
     <jsp:include page="share/share_css.jsp"></jsp:include>
@@ -38,8 +33,8 @@
                                 </div>
                             </div>
                             <div class="media-body">
-                                <span class="media-heading lead">草泥马 赞了</span><span class="media-heading lead"> 2016-8-20 11:35:35</span>
-                                <p class="well">艰苦奋斗萨菲隆的艰苦奋斗萨菲隆的艰......</p>
+                                <span class="media-heading lead">蜀东坡 赞了</span><span class="media-heading lead"> 2016-8-20 11:35:35</span>
+                                <p class="well">好想好想你，今天来看看你啦......</p>
 
                             </div>
                         </div>
@@ -53,7 +48,7 @@
                             </div>
                             <div class="media-body">
                                 <span class="media-heading lead">路易斯 回复 你</span><span class="media-heading lead"> 2016-8-20 11:35:35</span>
-                                <p class="well">真是日了狗</p>
+                                <p class="well">今天天气不错</p>
 
                             </div>
                         </div>
@@ -69,7 +64,7 @@
                             <div class="media-body">
                                 <span class="media-heading lead">卡卡罗特</span><span
                                     class="media-heading lead"> 回复 你</span>
-                                <p class="well">真是日了狗</p>
+                                <p class="well">春暖花开~</p>
 
                             </div>
                         </div>
@@ -84,7 +79,7 @@
                             </div>
                             <div class="media-body">
                                 <span class="media-heading lead">布尔玛</span><span class="media-heading lead"> 留言 :</span>
-                                <p class="well">真是日了狗</p>
+                                <p class="well">很好Good！！！</p>
                             </div>
                         </div>
                         <!--第四条说说结束-->

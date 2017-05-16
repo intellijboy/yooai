@@ -34,34 +34,10 @@
                 <div class="list-group" id="logBox">
                     <!--存放日志item BEGIN  -->
                     <!--存放日志item END  -->
-                    <div id="logDiv139" class="lead list-group-item list-group-item-heading">dfgsfds<span class="btn btn-default pull-right riziBtn" onclick="deleteLogEvent(139)"><span class="glyphicon glyphicon-trash"></span>删除</span>
-                        <a href="logUpdate/139"><span class="btn btn-default pull-right riziBtn"><span class="glyphicon glyphicon-pencil"></span>修改</span>
-                        </a>
-                        <a href="logDetail/139"><span class="btn btn-default pull-right riziBtn"><span class="glyphicon glyphicon-search"></span>查看详情</span>
-                        </a>
-                    </div>
-                    <div id="logDiv137" class="lead list-group-item list-group-item-heading">ZT 备胎突然有女朋友了，我该不该夺回来？有福利！<span class="btn btn-default pull-right riziBtn" onclick="deleteLogEvent(137)"><span class="glyphicon glyphicon-trash"></span>删除</span>
-                        <a href="logUpdate/137"><span class="btn btn-default pull-right riziBtn"><span class="glyphicon glyphicon-pencil"></span>修改</span>
-                        </a>
-                        <a href="logDetail/137"><span class="btn btn-default pull-right riziBtn"><span class="glyphicon glyphicon-search"></span>查看详情</span>
-                        </a>
-                    </div>
                     <div id="logDiv136" class="lead list-group-item list-group-item-heading">女生胸大会驼背吗，规矩我懂<span class="btn btn-default pull-right riziBtn" onclick="deleteLogEvent(136)"><span class="glyphicon glyphicon-trash"></span>删除</span>
                         <a href="logUpdate/136"><span class="btn btn-default pull-right riziBtn"><span class="glyphicon glyphicon-pencil"></span>修改</span>
                         </a>
                         <a href="logDetail/136"><span class="btn btn-default pull-right riziBtn"><span class="glyphicon glyphicon-search"></span>查看详情</span>
-                        </a>
-                    </div>
-                    <div id="logDiv135" class="lead list-group-item list-group-item-heading">女朋友老是不愿意和我亲热，求家人们帮忙分析<span class="btn btn-default pull-right riziBtn" onclick="deleteLogEvent(135)"><span class="glyphicon glyphicon-trash"></span>删除</span>
-                        <a href="logUpdate/135"><span class="btn btn-default pull-right riziBtn"><span class="glyphicon glyphicon-pencil"></span>修改</span>
-                        </a>
-                        <a href="logDetail/135"><span class="btn btn-default pull-right riziBtn"><span class="glyphicon glyphicon-search"></span>查看详情</span>
-                        </a>
-                    </div>
-                    <div id="logDiv134" class="lead list-group-item list-group-item-heading">你还爱着的前女友，和别人上床了，你会是什么感受<span class="btn btn-default pull-right riziBtn" onclick="deleteLogEvent(134)"><span class="glyphicon glyphicon-trash"></span>删除</span>
-                        <a href="logUpdate/134"><span class="btn btn-default pull-right riziBtn"><span class="glyphicon glyphicon-pencil"></span>修改</span>
-                        </a>
-                        <a href="logDetail/134"><span class="btn btn-default pull-right riziBtn"><span class="glyphicon glyphicon-search"></span>查看详情</span>
                         </a>
                     </div>
                     <div id="logDiv133" class="lead list-group-item list-group-item-heading">邮报：3200万镑，大卫路易斯接近回归切尔西<span class="btn btn-default pull-right riziBtn" onclick="deleteLogEvent(133)"><span class="glyphicon glyphicon-trash"></span>删除</span>

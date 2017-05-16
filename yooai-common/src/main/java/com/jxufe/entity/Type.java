@@ -1,6 +1,8 @@
 package com.jxufe.entity;
 
-public class Type {
+import java.io.Serializable;
+
+public class Type implements Serializable {
     private Integer typeId;
 
     private String typeName;

@@ -1,8 +1,9 @@
 package com.jxufe.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Friend {
+public class Friend implements Serializable {
     private Integer friendId;
 
     private Integer userId;

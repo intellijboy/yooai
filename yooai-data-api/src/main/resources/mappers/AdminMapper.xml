@@ -5,7 +5,7 @@
     <id column="admin_id" jdbcType="INTEGER" property="adminId" />
     <result column="admin_name" jdbcType="VARCHAR" property="adminName" />
     <result column="admin_password" jdbcType="CHAR" property="adminPassword" />
-    <result column="admin_type" jdbcType="INTEGER" property="adminType" />
+    <result column="admin_head_url" jdbcType="INTEGER" property="adminHeadUrl" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
     <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime" />
@@ -25,10 +25,10 @@
   </delete>
   <insert id="insert" parameterType="com.jxufe.entity.Admin">
     insert into admin (admin_id, admin_name, admin_password, 
-      admin_type, create_time, modify_time, 
+      admin_head_url, create_time, modify_time,
       last_login_time)
     values (#{adminId,jdbcType=INTEGER}, #{adminName,jdbcType=VARCHAR}, #{adminPassword,jdbcType=CHAR}, 
-      #{adminType,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}, 
+      #{adminHeadUrl,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP},
       #{lastLoginTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.jxufe.entity.Admin">
@@ -43,8 +43,8 @@
       <if test="adminPassword != null">
         admin_password,
       </if>
-      <if test="adminType != null">
-        admin_type,
+      <if test="adminHeadUrl != null">
+        admin_head_url,
       </if>
       <if test="createTime != null">
         create_time,
@@ -66,7 +66,7 @@
       <if test="adminPassword != null">
         #{adminPassword,jdbcType=CHAR},
       </if>
-      <if test="adminType != null">
+      <if test="admin_head_url != null">
         #{adminType,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
@@ -89,7 +89,7 @@
       <if test="adminPassword != null">
         admin_password = #{adminPassword,jdbcType=CHAR},
       </if>
-      <if test="adminType != null">
+      <if test="adminHeadUrl != null">
         admin_type = #{adminType,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
@@ -108,7 +108,7 @@
     update admin
     set admin_name = #{adminName,jdbcType=VARCHAR},
       admin_password = #{adminPassword,jdbcType=CHAR},
-      admin_type = #{adminType,jdbcType=INTEGER},
+      admin_head_url = #{adminHeadUrl,jdbcType=VARCHAR},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       modify_time = #{modifyTime,jdbcType=TIMESTAMP},
       last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP}

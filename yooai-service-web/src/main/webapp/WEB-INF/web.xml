@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>portal.html</welcome-file>
     </welcome-file-list>
 
 
     <!--1.配置前端控制器-->
     <servlet>
-        <servlet-name>YooAi_DispatcherServlet</servlet-name>
+        <servlet-name>YooAi_Front_DispatcherServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
@@ -22,7 +22,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>YooAi_DispatcherServlet</servlet-name>
+        <servlet-name>YooAi_Front_DispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 

@@ -1,11 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
-%>
 <html>
 <head>
-    <base href="<%=basePath%>">
     <title>我的留言</title>
     <meta charset="utf-8"/>
     <jsp:include page="share/share_css.jsp"></jsp:include>
@@ -31,7 +26,7 @@
         <div class="col-md-9 col-md-push-1">
             <script id="editor" type="text/plain">说点什么吧</script>
         </div>
-        <div style="clear: both; margin-bottom: ;"></div>
+        <div style="clear: both;"></div>
         <div class="col-md-4 col-md-push-8">
             <button class="btn btn-success" style="width: 150px;">留言</button>
         </div>

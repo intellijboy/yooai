@@ -1,8 +1,9 @@
 package com.jxufe.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class LeaveMsg {
+public class LeaveMsg implements Serializable {
     private Integer userId;
 
     private Integer leaveId;

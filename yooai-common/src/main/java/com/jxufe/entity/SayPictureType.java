@@ -1,8 +1,9 @@
 package com.jxufe.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class SayPictureType {
+public class SayPictureType implements Serializable {
     private Integer ptypeId;
 
     private String ptypeName;
